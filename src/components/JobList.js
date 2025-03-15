@@ -6,7 +6,7 @@ const JobList = () => {
     const [searchQuery, setSearchQuery] = useState('');
 
     const fetchJobs = (query = '') => {
-        const url = query ? `http://localhost:8000/api/search-jobs/?query=${query}` : 'http://localhost:8000/api/fetch-jobs/';
+        const url = query ? `https://jobs-backend-g6lz.onrender.com/api/search-jobs/?query=${query}` : 'https://jobs-backend-g6lz.onrender.com/api/fetch-jobs/';
         fetch(url)
             .then(response => response.json())
             .then(data => setJobs(data.jobs));
@@ -40,7 +40,7 @@ const JobList = () => {
                 {jobs.map((job, index) => (
                     <div key={index} className="p-4 border rounded">
                         <h2 className="text-xl font-semibold">
-                            <Link to={`http://localhost:8000/job/${job.id}`} className="text-blue-500 hover:underline">
+                            <Link to={`https://jobs-backend-g6lz.onrender.com/job/${job.id}`} className="text-blue-500 hover:underline">
                                 {job.title}
                             </Link>
                         </h2>

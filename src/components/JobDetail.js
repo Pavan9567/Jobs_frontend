@@ -6,7 +6,7 @@ const JobDetail = () => {
     const [job, setJob] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/job/${jobId}/`)
+        fetch(`https://jobs-backend-g6lz.onrender.com/api/job/${jobId}/`)
             .then(response => response.json())
             .then(data => setJob(data));
     }, [jobId]);
